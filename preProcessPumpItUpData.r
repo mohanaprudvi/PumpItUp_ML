@@ -117,6 +117,7 @@ Testing_Data$funder <- as.factor(Testing_Data$funder)
 
 limitLevels = 10
 
+#Reducing the number of levels
 funders_levels <- names(summary(Training_Data_Complete$funder)[1:limitLevels])
 funder <- factor(Training_Data_Complete$funder, levels=c(funders_levels, "Other"))
 funder[is.na(funder)] <- "Other"
