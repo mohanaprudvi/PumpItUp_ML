@@ -117,6 +117,8 @@ Testing_Data$funder <- as.factor(Testing_Data$funder)
 
 limitLevels = 10
 
+#Reducing the number of levels
+######
 funders_levels <- names(summary(Training_Data_Complete$funder)[1:limitLevels])
 funder <- factor(Training_Data_Complete$funder, levels=c(funders_levels, "Other"))
 funder[is.na(funder)] <- "Other"
@@ -145,7 +147,7 @@ Testing_Data$permit[Testing_Data$permit %in% c(" ","")] <- "other"
 Training_Data_Complete$permit <- as.factor(Training_Data_Complete$permit)
 Testing_Data$permit <- as.factor(Testing_Data$permit)
 
-Training_Data_Complete <- sapply(Training_Data_Complete,as.numeric) 
+Training_Data_Complete <- sapply(Training_Data_Complete,as.numeric)
 Testing_Data <- sapply(Testing_Data, as.numeric)
 
 Training_Data_Complete <- as.data.frame(Training_Data_Complete)
